@@ -1,0 +1,59 @@
+{
+	"variables": [],
+	"info": {
+		"name": "UserManagement",
+		"_postman_id": "883e602b-b5d7-36ea-4ccb-5c5bb833758a",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Users",
+			"request": {
+				"url": "http://localhost:3000/users",
+				"method": "GET",
+				"header": [],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "SignUp",
+			"request": {
+				"url": "http://btpvm0919.hpeswlab.net:3000/users/signUp",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\" : \"admin1@mail.com\",\n\t\"password\" : \"password\",\n\t\"address\" : \"hexKey\"\n}"
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "SignIn",
+			"request": {
+				"url": "http://btpvm0919.hpeswlab.net:3000/users/signIn",
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW4xQG1haWwuY29tOnBhc3N3b3Jk",
+						"description": ""
+					}
+				],
+				"body": {},
+				"description": ""
+			},
+			"response": []
+		}
+	]
+}
