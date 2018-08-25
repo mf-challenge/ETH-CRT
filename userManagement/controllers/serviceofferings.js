@@ -81,12 +81,12 @@ router.get('/adminbalance', function(req, res) {
 //  res.status(200).send(accounts.queryUserData(req.body))
 });
 
-router.get('/walletbalance', function(req, res) {
-  //var name = req.params.user
+router.get('/walletbalance/:walletid', function(req, res) {
+ var wallet = req.params.walletid
     logger.info("Received query for contract balance  -> " );
 
     //validate req and call service
-    bookings.querywalletBalance(req.body)
+    bookings.querywalletBalance(wallet)
     .then(function(response){
         res.status(200).send(response)
     }, function(err){

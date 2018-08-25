@@ -1,57 +1,220 @@
 {
-	"variables": [],
 	"info": {
+		"_postman_id": "14ff7455-1595-47b8-939e-c5b23b01c2ab",
 		"name": "UserManagement",
-		"_postman_id": "883e602b-b5d7-36ea-4ccb-5c5bb833758a",
-		"description": "",
-		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
 			"name": "Users",
 			"request": {
-				"url": "http://localhost:3000/users",
 				"method": "GET",
 				"header": [],
-				"body": {},
-				"description": ""
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "SignUp",
 			"request": {
-				"url": "http://btpvm0919.hpeswlab.net:3000/users/signUp",
 				"method": "POST",
 				"header": [
 					{
 						"key": "Content-Type",
-						"value": "application/json",
-						"description": ""
+						"value": "application/json"
 					}
 				],
 				"body": {
 					"mode": "raw",
 					"raw": "{\n\t\"userName\" : \"admin1@mail.com\",\n\t\"password\" : \"password\",\n\t\"address\" : \"hexKey\"\n}"
 				},
-				"description": ""
+				"url": {
+					"raw": "http://btpvm0919.hpeswlab.net:3000/users/signUp",
+					"protocol": "http",
+					"host": [
+						"btpvm0919",
+						"hpeswlab",
+						"net"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signUp"
+					]
+				}
 			},
 			"response": []
 		},
 		{
 			"name": "SignIn",
 			"request": {
-				"url": "http://btpvm0919.hpeswlab.net:3000/users/signIn",
 				"method": "GET",
 				"header": [
 					{
 						"key": "Authorization",
-						"value": "Basic YWRtaW4xQG1haWwuY29tOnBhc3N3b3Jk",
-						"description": ""
+						"value": "Basic YWRtaW4xQG1haWwuY29tOnBhc3N3b3Jk"
 					}
 				],
-				"body": {},
-				"description": ""
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://btpvm0919.hpeswlab.net:3000/users/signIn",
+					"protocol": "http",
+					"host": [
+						"btpvm0919",
+						"hpeswlab",
+						"net"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"signIn"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Deploy Mpats contract",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\" : \"admin1@mail.com\",\n\t\"password\" : \"password\",\n\t\"description\" : \"token contract\"\n}"
+				},
+				"url": {
+					"raw": "http://10.0.2.15:3000/mpats",
+					"protocol": "http",
+					"host": [
+						"10",
+						"0",
+						"2",
+						"15"
+					],
+					"port": "3000",
+					"path": [
+						"mpats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Initial Pat Transfer",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"userName\" : \"testuser1\",\n\t\"walletAddress\" : \"4620865ded45c5f529824b3374bc04771cd145f7\",\n\t\"value\":500,\n\t\"description\" : \"token contract\"\n}"
+				},
+				"url": {
+					"raw": "http://192.168.0.104:3000/mpats/freepats",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"104"
+					],
+					"port": "3000",
+					"path": [
+						"mpats",
+						"freepats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get wallet balance - Admin",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW4xQG1haWwuY29tOnBhc3N3b3Jk"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://192.168.0.104:3000/mpats/adminbalance",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"104"
+					],
+					"port": "3000",
+					"path": [
+						"mpats",
+						"adminbalance"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get wallet balance -User",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Basic YWRtaW4xQG1haWwuY29tOnBhc3N3b3Jk"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": ""
+				},
+				"url": {
+					"raw": "http://192.168.0.104:3000/mpats/walletbalance/4620865ded45c5f529824b3374bc04771cd145f7",
+					"protocol": "http",
+					"host": [
+						"192",
+						"168",
+						"0",
+						"104"
+					],
+					"port": "3000",
+					"path": [
+						"mpats",
+						"walletbalance",
+						"4620865ded45c5f529824b3374bc04771cd145f7"
+					]
+				}
 			},
 			"response": []
 		}

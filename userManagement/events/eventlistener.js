@@ -67,7 +67,7 @@ web3.eth.personal.unlockAccount(config.default_address, config.default_passwd)
   Hello.options.address = config.mfptokencontract_address
   logger.info("Registering for MFToken contract Events")
   //Hello.events.BookRoomPostTfr({
-  Hello.events.allEvents({
+  Hello.events.Transfer({
         //filter: {myIndexedParam: [20,23], myOtherIndexedParam: '0x123456789...'}, // Using an array means OR: e.g. 20 or 23
        fromBlock: 0
     }, function(error, event){

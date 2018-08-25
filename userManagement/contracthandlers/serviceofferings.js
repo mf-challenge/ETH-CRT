@@ -169,7 +169,8 @@ function walletTokenBalance(args)
 
                CntrctABI.options.address = config.mfptokencontract_address
                logger.info("Contract address is", CntrctABI.options.address)
-               return CntrctABI.methods.balanceOf(args.walletAddress).call()
+               logger.info("wallet  address is", args)
+               return CntrctABI.methods.balanceOf(args).call()
                .then(function(receipt){
                    logger.info("receipt from balanceOf invokation ",receipt)
                 return receipt
